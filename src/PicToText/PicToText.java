@@ -57,8 +57,8 @@ public class PicToText {
                 translation += symbols.get(i);
                 if (w + 1 != width) {
                     translation += ",";
-                }
             }
+        }
             translation += "\"\n";
         }
         return translation;
@@ -83,10 +83,10 @@ public class PicToText {
             translation += "\"\n";
         }
         
+        translation += "\n\tparticles:\n";
         for (int particle = 0; particle < symbols.size(); particle++) {
             if(symbols.get(particle) != '-')
             {
-                translation += "\tparticles:\n";
                 translation += "\t\t" + symbols.get(particle) + ":\n";
                 translation += 
 "          \t\t  particle:\n" +
