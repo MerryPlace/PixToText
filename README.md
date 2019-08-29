@@ -19,4 +19,4 @@ The wonderful plugin can be found here: https://github.com/Tigeax/CustomWings
 
 * When pasting the text elsewhere you need to use a font which has each character take up the same width such as Courier. otherwise the 'image' can be severely distorted.
 
-* At the moment you have to be careful with fully transparent pixels not always being grouped together. Despite a pixels alpha being 255 (fully transparent) it's RGB values can still be different if the program you use does not properly set these values when erasing. ex: R:255 G:255 B:255 A:0 is a black clear pixel while R:0 G:0 B:0 A:0 is a white clear pixel; these will be grouped seperately.
+* At the moment you have to be careful with fully transparent pixels not always being grouped together. Despite a pixels alpha being 0 (fully transparent) it's RGB values can still be different if the program you use does not properly set these values when erasing. ex: R:255 G:255 B:255 A:0 is a black clear pixel while R:0 G:0 B:0 A:0 is a white clear pixel; these will be grouped seperately.
