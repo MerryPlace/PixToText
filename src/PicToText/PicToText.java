@@ -73,10 +73,10 @@ public class PicToText {
     {
         //image
         translation = "";
-        translation += "\tparticleLayout:\n";
+        translation += "    particleLayout:\n";
         int i;
         for (int h = 0; h < height; h++) {
-            translation += "\t\t" + (h + 1) +": ";
+            translation += "        " + (h + 1) +": ";
             if( h < 9)
                 {
                     translation += " ";
@@ -94,7 +94,7 @@ public class PicToText {
             translation += "\"\n";
         }
         //symbol info
-        translation += "\n\tparticles:\n";
+        translation += "        \n    particles:\n";
         for (int particle = 0; particle < symbols.size(); particle++) {
             
             Color c = new Color(colors.get(particle));
@@ -102,15 +102,18 @@ public class PicToText {
             
             if(symbols.get(particle) != '-')
             {
-                translation += "\t\t" + symbols.get(particle) + ":\n";
                 translation += 
-"          \t\t  particle:\n" +
-"          \t\t  distance:\n" +
-"          \t\t  height:\n" +
-"          \t\t  angle:\n" +
-"          \t\t  speed:\n\n" +
-"          \t\t  blockType:\n" +
-"          \t\t  color: " + rgbInt + "\n\n";
+"        " + symbols.get(particle) + ":\n";
+                translation += 
+"          particle:\n" +
+"          distance:\n" +
+"          height:\n" +
+"          angle:\n" +
+"          speed:\n" + 
+"          \n" +
+"          blockType:\n" +
+"          color: " + rgbInt + "\n" +
+"          \n";
             }
         }
         return translation;
