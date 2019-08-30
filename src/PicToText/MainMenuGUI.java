@@ -1,3 +1,6 @@
+/*  Code by Noah Ortega
+    2019
+*/
 package PicToText;
 
 import java.io.File;
@@ -5,15 +8,10 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author midli
- */
+
 public class MainMenuGUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PicToTextGUI
-     */
+
     public MainMenuGUI() {
         initComponents();
     }
@@ -36,7 +34,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Wings: Pic to Text");
+        setTitle("Pix to Text");
 
         ContinueButton.setText("Continue");
         ContinueButton.addActionListener(new java.awt.event.ActionListener() {

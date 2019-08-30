@@ -1,5 +1,10 @@
+/*  Code by Noah Ortega
+    2019
+*/
+
 package PicToText;
 
+import java.awt.Color;
 import java.util.*; 
 import java.io.File;
 import java.io.IOException;
@@ -66,11 +71,17 @@ public class PicToText {
     
     String translateImageWing()
     {
+        //image
         translation = "";
         translation += "\tparticleLayout:\n";
         int i;
         for (int h = 0; h < height; h++) {
-            translation += "\t\t" + (h + 1) +":  \"";
+            translation += "\t\t" + (h + 1) +": ";
+            if( h < 9)
+                {
+                    translation += " ";
+                }
+            translation += "\"";
             for (int w = 0; w < width; w++) {
                 int pixel = image.getRGB(w,h);
                 i = 0;
@@ -82,9 +93,13 @@ public class PicToText {
             }
             translation += "\"\n";
         }
-        
+        //symbol info
         translation += "\n\tparticles:\n";
         for (int particle = 0; particle < symbols.size(); particle++) {
+            
+            Color c = new Color(colors.get(particle));
+            int rgbInt = (c.getRed()<<16)|(c.getGreen()<<8)|c.getBlue();
+            
             if(symbols.get(particle) != '-')
             {
                 translation += "\t\t" + symbols.get(particle) + ":\n";
@@ -95,7 +110,7 @@ public class PicToText {
 "          \t\t  angle:\n" +
 "          \t\t  speed:\n\n" +
 "          \t\t  blockType:\n" +
-"          \t\t  color: " + colors.get(particle) + "\n\n";
+"          \t\t  color: " + rgbInt + "\n\n";
             }
         }
         return translation;

@@ -27,6 +27,7 @@ public class FileExplorerGUI extends javax.swing.JFrame {
 
         setTitle("File Selection");
 
+        FileChooser.setCurrentDirectory(new java.io.File("D:\\\\Pictures"));
         FileChooser.setDialogTitle("");
         FileChooser.setFileHidingEnabled(false);
         FileChooser.addActionListener(new java.awt.event.ActionListener() {
